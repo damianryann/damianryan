@@ -1,9 +1,7 @@
-import styles from './Footer.module.css';
-
 export default function Footer() {
+  const currentYear = new Date().getFullYear();
+
   return (
-    <footer className={styles.footer}>
-      <img src="/logo-netlify.svg" alt="Netlify Logo" className={styles.logo} />
-    </footer>
+    <footer className="text-center p-4">&copy; {currentYear} Red Tower Ltd. All rights reserved.</footer>
   );
 }

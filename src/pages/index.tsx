@@ -29,12 +29,13 @@ export default function Home() {
           <section className="secondary">
             <div className="row">
               <div className="col-md-6">
-                <h1>
+                <h2>What do we do?</h2>
+                <p>
                   It is a long established fact that a reader will be distracted
                   by the readable content of a page when looking at its layout.
                   The point of using Lorem Ipsum is that it has a more-or-less
                   normal distribution of letters
-                </h1>
+                </p>
               </div>
               <div className="col-md-6">
                 <p>
@@ -54,13 +55,25 @@ export default function Home() {
             </div>
           </section>
           <section className="primary">
-            <h1>Go ahead...</h1>
+            <div className="row">
+              <div className="col-md-12">
+                <h1>Go ahead...</h1>{' '}
+              </div>{' '}
+            </div>
           </section>
           <section className="secondary">
-            <h1>Keep scrolling...</h1>
+            <div className="row">
+              <div className="col-md-12">
+                <h1>Keep scrolling...</h1>{' '}
+              </div>{' '}
+            </div>
           </section>
           <section className="primary">
-            <h1>Ok, thats it.</h1>
+            <div className="row">
+              <div className="col-md-12">
+                <h1>Ok, thats it.</h1>{' '}
+              </div>{' '}
+            </div>
           </section>
         </div>
       </main>

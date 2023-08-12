@@ -66,10 +66,6 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
-* {
-  box-sizing: border-box;
-}
-
 code {
   background: #fafafa;
   border-radius: 5px;
@@ -106,7 +102,6 @@ section {
   height: 100%;
   padding: 80px;
   padding-top: calc(100vw / 20);
-  padding-bottom: calc(100vw / 12);
   -webkit-transform: skew(0, -2deg) translateY(calc(50vw / -12));
   -ms-transform: skew(0, -2deg) translateY(calc(50vw / -12));
   transform: skew(0, -2deg) translateY(calc(50vw / -12));
@@ -117,24 +112,14 @@ section {
   &:first-child {
     position: relative;
     margin-top: calc(50vw / 24);
-    padding: 100px;
     z-index: -1;
-  }
-
-  &:not(:last-child) * {
-    -webkit-transform: skew(0, 2deg) translateY(calc(50vw / 12));
-    -ms-transform: skew(0, 2deg) translateY(calc(50vw / 12));
-    transform: skew(0, 2deg) translateY(calc(50vw / 12));
-    margin-top: calc(50vw / -12);
   }
 
   div,
   span {
-    -webkit-transform: skew(0, 0deg) translateY(calc(50vw / 12)) !important;
-    -ms-transform: skew(0, 0deg) translateY(calc(50vw / 12)) !important;
-    transform: skew(0, 0deg) translateY(calc(50vw / 12)) !important;
-    margin-top: 80px;
-    margin-bottom: 80px;
+    -webkit-transform: skew(0, 1deg) t !important;
+    -ms-transform: skew(0, 1deg) !important;
+    transform: skew(0, 1deg) !important;
   }
 
   &:last-child {
@@ -146,6 +131,13 @@ section {
     padding-top: calc(100vw / 12);
     padding-bottom: calc(100vw / 12);
     z-index: -1;
+
+    div,
+    span {
+      -webkit-transform: skew(0, 0deg) t !important;
+      -ms-transform: skew(0, 0deg) !important;
+      transform: skew(0, 0deg) !important;
+    }
   }
 
   &.image {
@@ -164,6 +156,17 @@ section {
     background-color: $secondary;
     color: $black;
   }
+}
+
+@for $index from 1 through 6 {
+  h#{$index} {
+    text-transform: uppercase;
+  }
+}
+
+h3 span {
+  position: absolute;
+  top: -200px;
 }
 
 .header-padding {
