@@ -128,6 +128,15 @@ section {
     margin-top: calc(50vw / -12);
   }
 
+  div,
+  span {
+    -webkit-transform: skew(0, 0deg) translateY(calc(50vw / 12)) !important;
+    -ms-transform: skew(0, 0deg) translateY(calc(50vw / 12)) !important;
+    transform: skew(0, 0deg) translateY(calc(50vw / 12)) !important;
+    margin-top: 80px;
+    margin-bottom: 80px;
+  }
+
   &:last-child {
     position: relative;
     -webkit-transform: skew(0);
@@ -168,6 +177,10 @@ section {
 
   section {
     padding: 60px 20px 60px 20px;
+
+    &.image {
+      padding: 20px;
+    }
 
     &:last-child {
       padding-top: 60px;
