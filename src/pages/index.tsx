@@ -17,7 +17,11 @@ export default function Home() {
             <div className="row">
               <div className="col-md-12 col-lg-6">
                 <span className="display-1 text-white fw-bold bg-black">
-                  It's time to party with us at Notting Hill Carnival 2023
+                  It's time to party with us at Notting Hill Carnival
+                </span>
+                <br />
+                <span className="display-6 text-white fw-bold bg-black">
+                  27th - 28th August, 2023
                 </span>
               </div>
             </div>
