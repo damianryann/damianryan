@@ -1,0 +1,19 @@
+$primary: #df0000;
+$secondary: #f3f3f3;
+$success: #116700;
+$info: grey;
+$warning: #ffd900;
+$danger: #a10000;
+$black: #000;
+$white: #fff;
+
+$theme-colors: (
+  "primary": $primary,
+  "secondary": $secondary,
+  "success": $success,
+  "info": $info,
+  "warning": $warning,
+  "danger": $danger,
+  "white": $white,
+  "black": $black,
+) !default;

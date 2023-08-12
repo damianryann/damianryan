@@ -1,0 +1,176 @@
+@import './variables';
+
+// 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
+@import '~bootstrap/scss/functions';
+
+// 2. Include any default variable overrides here
+
+// 3. Include remainder of required Bootstrap stylesheets (including any separate color mode stylesheets)
+@import '~bootstrap/scss/variables';
+//@import "~bootstrap/scss/variables-dark";
+
+// 4. Include any default map overrides here
+
+// 5. Include remainder of required parts
+@import '~bootstrap/scss/maps';
+@import '~bootstrap/scss/mixins';
+@import '~bootstrap/scss/root';
+
+// 6. Optionally include any other parts as needed, annoyingly they aren't all here
+// So add as needed I guess
+@import '~bootstrap/scss/utilities';
+@import '~bootstrap/scss/reboot';
+@import '~bootstrap/scss/type';
+@import '~bootstrap/scss/nav';
+@import '~bootstrap/scss/images';
+@import '~bootstrap/scss/containers';
+@import '~bootstrap/scss/grid';
+@import '~bootstrap/scss/helpers';
+@import '~bootstrap/scss/forms';
+@import '~bootstrap/scss/buttons';
+@import '~bootstrap/scss/tables';
+@import '~bootstrap/scss/forms';
+@import '~bootstrap/scss/buttons';
+@import '~bootstrap/scss/transitions';
+@import '~bootstrap/scss/dropdown';
+@import '~bootstrap/scss/button-group';
+@import '~bootstrap/scss/nav';
+@import '~bootstrap/scss/navbar';
+@import '~bootstrap/scss/card';
+// @import '~bootstrap/scss/accordion';
+// @import '~bootstrap/scss/breadcrumb';
+// @import '~bootstrap/scss/pagination';
+// @import '~bootstrap/scss/badge';
+@import '~bootstrap/scss/alert';
+// @import '~bootstrap/scss/progress';
+@import '~bootstrap/scss/list-group';
+@import '~bootstrap/scss/close';
+// @import '~bootstrap/scss/toasts';
+@import '~bootstrap/scss/modal';
+// @import '~bootstrap/scss/tooltip';
+// @import '~bootstrap/scss/popover';
+// @import '~bootstrap/scss/carousel';
+// @import '~bootstrap/scss/spinners';
+// @import '~bootstrap/scss/offcanvas';
+
+// 7. Optionally include utilities API last to generate classes based on the Sass map in `_utilities.scss`
+@import '~bootstrap/scss/utilities/api';
+
+// 8. Add additional custom code here
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+code {
+  background: #fafafa;
+  border-radius: 5px;
+  padding: 0.75rem;
+  font-family: Menlo, Monaco, Lucida Console, Courier New, monospace;
+}
+
+header {
+  background: linear-gradient(180deg, #1d1d1d, rgba(255, 0, 0, 0));
+  background-color: transparent;
+  height: 100%;
+  max-height: 200px;
+  z-index: 99;
+  transition: background-color 0.5s ease-in-out, height 0.5s ease;
+
+  &.scroll-background {
+    background: none;
+    background-color: $primary;
+    height: 120px;
+  }
+}
+
+.logo {
+  height: 160px;
+  transition: height 0.5s ease-in-out;
+
+  &.scroll-background {
+    height: 80px;
+  }
+}
+
+section {
+  width: 100%;
+  height: 100%;
+  padding: 80px;
+  padding-top: calc(100vw / 20);
+  padding-bottom: calc(100vw / 12);
+  -webkit-transform: skew(0, -2deg) translateY(calc(50vw / -12));
+  -ms-transform: skew(0, -2deg) translateY(calc(50vw / -12));
+  transform: skew(0, -2deg) translateY(calc(50vw / -12));
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+
+  &:first-child {
+    position: relative;
+    margin-top: calc(50vw / 24);
+    padding: 100px;
+    z-index: -1;
+  }
+
+  &:not(:last-child) * {
+    -webkit-transform: skew(0, 2deg) translateY(calc(50vw / 12));
+    -ms-transform: skew(0, 2deg) translateY(calc(50vw / 12));
+    transform: skew(0, 2deg) translateY(calc(50vw / 12));
+    margin-top: calc(50vw / -12);
+  }
+
+  &:last-child {
+    position: relative;
+    -webkit-transform: skew(0);
+    -ms-transform: skew(0);
+    transform: skew(0);
+    margin-top: calc(100vw / -12);
+    padding-top: calc(100vw / 12);
+    padding-bottom: calc(100vw / 12);
+    z-index: -1;
+  }
+
+  &.image {
+    min-height: 800px;
+    background-image: url('/nottinghill.jpg');
+    background-size: cover;
+    background-position: top center;
+  }
+
+  &.primary {
+    background-color: $primary;
+    color: $white;
+  }
+
+  &.secondary {
+    background-color: $secondary;
+    color: $black;
+  }
+}
+
+.header-padding {
+  padding: 0 80px;
+}
+
+@media screen and (max-width: 576px) {
+  .header-padding {
+    padding: 0 20px;
+  }
+
+  section {
+    padding: 60px 20px 60px 20px;
+
+    &:last-child {
+      padding-top: 60px;
+    }
+  }
+}
