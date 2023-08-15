@@ -13,10 +13,12 @@ export default function Home() {
       <main>
         <Header title="This is Red Tower" />
         <div className="section-container">
-          <section className="image d-flex align-items-end justify-content-start">
+          <section
+            className="hero-image skew-section image d-flex align-items-end justify-content-start"
+            style={{ backgroundImage: 'url("/nottinghill.jpg")' }}>
             <div className="row">
-              <div className="col-md-12 col-lg-6">
-                <span className="display-1 text-white fw-bold bg-black">
+              <div className="col-sm-12 col-md-12 col-lg-6">
+                <span className="display-3 text-white fw-bold bg-black">
                   It's time to party with us at Notting Hill Carnival
                 </span>
                 <br />
@@ -26,53 +28,54 @@ export default function Home() {
               </div>
             </div>
           </section>
-          <section className="secondary">
-            <div className="row">
-              <div className="col-md-6">
-                <h2>What do we do?</h2>
+          <section className="skew-section secondary">
+            <div className="row d-flex align-items-center">
+              <div className="col-md-12 col-lg-6">
+                <img
+                  className="w-100 mb-4 mb-md-0"
+                  src="/thumb-1.png"
+                  alt="Red Tower with Rampage Sound at Notting Hill Carnival in 2021"
+                />
+              </div>
+              <div className="col-md-6 justify-content-center align-items-center">
+                <h2>
+                  Youth, Talent and Business Development for Creative
+                  Businesses, Individuals and Projects.
+                </h2>
                 <p>
-                  It is a long established fact that a reader will be distracted
-                  by the readable content of a page when looking at its layout.
-                  The point of using Lorem Ipsum is that it has a more-or-less
-                  normal distribution of letters
+                  We work with organisations and individuals in the creative
+                  sector who want to establish and sustain themselves with a
+                  view for long-term success. We specialize in mediating,
+                  negotiating, representation and Project Managing complex
+                  details - ensuring ALL stakeholders are satisfied. This in
+                  turn will help you work effectively - allowing us to focus on
+                  all the 'boring yet crucial bits'!
+                </p>
+                <p>
+                  We have a vested interest in the youth market - and would
+                  ideally love to work with those who serve this audience as a
+                  primary focus.
                 </p>
               </div>
-              <div className="col-md-6">
-                <p>
-                  It is a long established fact that a reader will be distracted
-                  by the readable content of a page when looking at its layout.
-                  The point of using Lorem Ipsum is that it has a more-or-less
-                  normal distribution of letters, as opposed to using 'Content
-                  here, content here', making it look like readable English.
-                  Many desktop publishing packages and web page editors now use
-                  Lorem Ipsum as their default model text, and a search for
-                  'lorem ipsum' will uncover many web sites still in their
-                  infancy. Various versions have evolved over the years,
-                  sometimes by accident, sometimes on purpose (injected humour
-                  and the like).
-                </p>
+            </div>
+          </section>
+          <section className="skew-section secondary">
+            <div className="row">
+              <div className="col-md-12">
+                <h1>Go ahead...</h1>
               </div>
             </div>
           </section>
-          <section className="primary">
+          <section className="skew-section secondary">
             <div className="row">
-              <div className="col-md-12">
-                <h1>Go ahead...</h1>{' '}
-              </div>{' '}
+              <div className="col-md-12">Bleh</div>
             </div>
           </section>
-          <section className="secondary">
+          <section className="skew-section primary">
             <div className="row">
               <div className="col-md-12">
-                <h1>Keep scrolling...</h1>{' '}
-              </div>{' '}
-            </div>
-          </section>
-          <section className="primary">
-            <div className="row">
-              <div className="col-md-12">
-                <h1>Ok, thats it.</h1>{' '}
-              </div>{' '}
+                <h1>Ok, thats it.</h1>
+              </div>
             </div>
           </section>
         </div>
