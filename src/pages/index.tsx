@@ -62,6 +62,7 @@ export default function Home() {
         </main>
         <Footer activeModal={activeModal} onModalToggle={handleModalToggle} />
       </div>
+      <div className="safari_only" />
     </Fragment>
   );
 }
