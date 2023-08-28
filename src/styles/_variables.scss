@@ -1,5 +1,6 @@
-$primary: #df0000;
-$secondary: #f3f3f3;
+$primary: #75d885;
+$secondary: #ffffff;
+$background: #a9b3d8;
 $success: #116700;
 $info: grey;
 $warning: #ffd900;
@@ -7,13 +8,50 @@ $danger: #a10000;
 $black: #000;
 $white: #fff;
 
+$footer: #000000b5;
+
 $theme-colors: (
-  "primary": $primary,
-  "secondary": $secondary,
-  "success": $success,
-  "info": $info,
-  "warning": $warning,
-  "danger": $danger,
-  "white": $white,
-  "black": $black,
+  'primary': $primary,
+  'secondary': $secondary,
+  'background': $background,
+  'success': $success,
+  'info': $info,
+  'warning': $warning,
+  'danger': $danger,
+  'white': $white,
+  'black': $black
 ) !default;
+
+.smaller {
+  font-size: 0.75rem;
+}
+
+@media (min-width: 0px) {
+  .bg-xs-none {
+    background-color: unset !important;
+  }
+
+  .bg-xs-black {
+    background-color: $black !important;
+  }
+}
+
+@media (min-width: 576px) {
+  .bg-sm-none {
+    background-color: unset !important;
+  }
+
+  .bg-sm-black {
+    background-color: $black !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .bg-md-none {
+    background-color: unset !important;
+  }
+
+  .bg-md-black {
+    background-color: $black !important;
+  }
+}

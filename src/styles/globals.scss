@@ -1,4 +1,5 @@
 @import './variables';
+@import './fonts';
 
 // 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
 @import '~bootstrap/scss/functions';
@@ -59,154 +60,120 @@
 // 8. Add additional custom code here
 @import '~bootstrap-icons';
 
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+.transform {
+  transition: transform 0.2s;
+
+  &:hover,
+  &:focus {
+    transform: scale(1.2);
+  }
 }
 
-code {
-  background: #fafafa;
-  border-radius: 5px;
-  padding: 0.75rem;
-  font-family: Menlo, Monaco, Lucida Console, Courier New, monospace;
+@for $i from 1 through 6 {
+  h#{$i} {
+    font-family: 'Comfortaa', cursive;
+  }
+}
+
+html,
+body {
+  font-family: 'IBM Plex Sans', sans-serif;
+}
+
+body {
+  color: $white;
+  background: url(https://billburr.com/wp-content/uploads/2022/11/banner2.png)
+    no-repeat center center;
+  overflow: hidden;
+  background-size: cover !important;
+  background-position: 100% 100% !important;
+  background-color: $black;
 }
 
 header {
-  background: linear-gradient(180deg, #1d1d1d, rgba(255, 0, 0, 0));
-  background-color: transparent;
-  height: 100%;
-  max-height: 200px;
-  z-index: 99;
-  transition: background-color 0.5s ease-in-out, height 0.5s ease;
-
-  &.scroll-background {
-    background: none;
-    background-color: $primary;
-    height: 120px;
+  @for $i from 1 through 6 {
+    h#{$i} {
+      font-family: 'Comfortaa', cursive;
+      letter-spacing: -10px;
+    }
   }
 }
 
-.logo {
-  height: 160px;
-  transition: height 0.5s ease-in-out;
+footer {
+  background-color: $footer;
+  z-index: 100;
 
-  &.scroll-background {
-    height: 80px;
+  .nav-item {
+    a {
+      color: $white;
+      text-decoration: none;
+      text-transform: lowercase;
+      font-family: 'Comfortaa', cursive;
+      letter-spacing: -1px;
+
+      &.active {
+        color: $primary;
+        text-decoration: underline;
+        text-decoration-color: $white;
+      }
+    }
   }
 }
 
-.skew-section {
+.icon {
+  color: $white !important;
+
+  &:hover,
+  &:focus {
+    color: $primary !important;
+  }
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.on-load-animation {
+  animation: fadeInUp 1s ease-in-out forwards;
+}
+
+.main-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  padding: 80px;
-  padding-top: calc(100vw / 20);
-  -webkit-transform: skew(0, -2deg) translateY(calc(50vw / -12));
-  -ms-transform: skew(0, -2deg) translateY(calc(50vw / -12));
-  transform: skew(0, -2deg) translateY(calc(50vw / -12));
-  //display: -webkit-box;
-  //display: -ms-flexbox;
-  //display: flex;
+  background: #020202d4;
+  z-index: 9;
 
-  &:first-child {
-    position: relative;
-    margin-top: calc(50vw / 24);
-    z-index: -1;
+  .icon {
+    z-index: 10;
   }
+}
 
-  div,
-  span {
-    -webkit-transform: skew(0, 1deg) t !important;
-    -ms-transform: skew(0, 1deg) !important;
-    transform: skew(0, 1deg) !important;
-  }
-
-  &:last-child {
-    position: relative;
-    -webkit-transform: skew(0);
-    -ms-transform: skew(0);
-    transform: skew(0);
-    margin-top: calc(100vw / -12);
-    padding-top: calc(100vw / 12);
-    padding-bottom: calc(100vw / 12);
-    z-index: -1;
-
-    div,
-    span {
-      -webkit-transform: skew(0, 0deg) t !important;
-      -ms-transform: skew(0, 0deg) !important;
-      transform: skew(0, 0deg) !important;
+@media only screen and (max-width: 767px) {
+  header {
+    @for $i from 1 through 6 {
+      h#{$i} {
+        letter-spacing: -5px;
+      }
     }
   }
 
-  &.image {
-    background-size: cover;
-    background-position: top center;
-  }
-
-  &.primary {
-    background-color: $primary;
-    color: $white;
-  }
-
-  &.secondary {
-    background-color: $secondary;
-    color: $black;
+  body {
+    background-position: 53% 100% !important;
   }
 }
 
-.hero-image {
-  min-height: 700px;
-}
-
-.gradient {
-  &-start {
-    background: linear-gradient(
-      270deg,
-      rgb(0, 0, 0),
-      rgba(255, 0, 0, 0)
-    ) !important;
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
   }
-  &-end {
-    background: linear-gradient(
-      90deg,
-      rgb(0, 0, 0),
-      rgba(255, 0, 0, 0)
-    ) !important;
-  }
-}
-
-@for $index from 1 through 6 {
-  h#{$index} {
-    text-transform: uppercase;
-  }
-}
-
-h3 span {
-  position: absolute;
-  top: -200px;
-}
-
-.header-padding {
-  padding: 0 80px;
-}
-
-@media screen and (max-width: 576px) {
-  .header-padding {
-    padding: 0 20px;
-  }
-
-  .skew-section {
-    padding: 60px 20px 60px 20px;
-
-    &.image {
-      padding: 20px;
-    }
-
-    &:last-child {
-      padding-top: 60px;
-    }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
