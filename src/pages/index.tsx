@@ -44,7 +44,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
         <Script id="site-improve">{`window.interdeal = { "sitekey": "5ad837f98422203038c6afb629411b02", "Position": "Left", "Menulang": "EN-GB", "domains": { "js": "https://cdn.equalweb.com/", "acc": "https://access.equalweb.com/" }, "btnStyle": { "vPosition": [ "80%", null ], "scale": [ "0.8", "0.8" ], "icon": { "type": 11, "shape": "semicircle", "outline": false } } }; (function(doc, head, body){ var coreCall = doc.createElement('script'); coreCall.src = interdeal.domains.js + 'core/4.5.8/accessibility.js'; coreCall.defer = true; coreCall.integrity = 'sha512-edRZXolhkUWHM/uu0oiEu0tD39SPOhnl5a2KM+62YWIfb4M5oSMjvyl2NPXtGq8McfJl88bKtaxljjViGqQXtA=='; coreCall.crossOrigin = 'anonymous'; coreCall.setAttribute('data-cfasync', true ); body? body.appendChild(coreCall) : head.appendChild(coreCall); })(document, document.head, document.body);`}</Script>
       </Head>
-      <div className="vh-100 position-relative">
+      <div className="position-relative">
         <Header title="Damian Ryan" />
         <main>
           <section className="d-flex align-items-end justify-content-start">
@@ -62,7 +62,6 @@ export default function Home() {
         </main>
         <Footer activeModal={activeModal} onModalToggle={handleModalToggle} />
       </div>
-      <div className="safari_only" />
     </Fragment>
   );
 }
