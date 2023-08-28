@@ -72,11 +72,6 @@
 html,
 body {
   font-family: 'IBM Plex Sans', sans-serif;
-  min-height: 100%;
-  margin: 0px auto;
-  position: relative;
-  overflow: hidden;
-  height: 100vh;
 }
 
 body {
@@ -87,6 +82,14 @@ body {
   background-size: cover !important;
   background-position: 100% 100% !important;
   background-color: $black;
+}
+
+.contain {
+  min-height: 100%;
+  margin: 0px auto;
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
 }
 
 .transform {
