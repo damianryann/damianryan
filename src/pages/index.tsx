@@ -17,6 +17,15 @@ export default function Home() {
   };
 
   useEffect(() => {
+    const appHeight = () => {
+      const doc = document.documentElement;
+      doc.style.setProperty('--app-height', `${window.innerHeight}px`);
+    };
+    window.addEventListener('resize', appHeight);
+    appHeight();
+  }, []);
+
+  useEffect(() => {
     const { asPath } = router;
     const hashIndex = asPath.indexOf('#');
 
