@@ -26,6 +26,10 @@ $theme-colors: (
   font-size: 0.75rem;
 }
 
+.display-7 {
+  font-size: 1.25rem;
+}
+
 @media (min-width: 0px) {
   .bg-xs-none {
     background-color: unset !important;
@@ -33,6 +37,14 @@ $theme-colors: (
 
   .bg-xs-black {
     background-color: $black !important;
+  }
+
+  .display-7 {
+    font-size: 1rem;
+  }
+
+  .mt-n-title {
+    margin-top: -0.25rem;
   }
 }
 
@@ -44,6 +56,14 @@ $theme-colors: (
   .bg-sm-black {
     background-color: $black !important;
   }
+
+  .display-7 {
+    font-size: 1rem;
+  }
+
+  .mt-n-title {
+    margin-top: -0.5rem;
+  }
 }
 
 @media (min-width: 768px) {
@@ -53,5 +73,13 @@ $theme-colors: (
 
   .bg-md-black {
     background-color: $black !important;
+  }
+
+  .display-7 {
+    font-size: 1.25rem;
+  }
+
+  .mt-n-title {
+    margin-top: -0.25rem;
   }
 }

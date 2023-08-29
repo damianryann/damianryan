@@ -23,18 +23,16 @@
 @import '~bootstrap/scss/reboot';
 @import '~bootstrap/scss/type';
 @import '~bootstrap/scss/nav';
-@import '~bootstrap/scss/images';
+// @import '~bootstrap/scss/images';
 @import '~bootstrap/scss/containers';
 @import '~bootstrap/scss/grid';
 @import '~bootstrap/scss/helpers';
 @import '~bootstrap/scss/forms';
 @import '~bootstrap/scss/buttons';
 @import '~bootstrap/scss/tables';
-@import '~bootstrap/scss/forms';
-@import '~bootstrap/scss/buttons';
-@import '~bootstrap/scss/transitions';
-@import '~bootstrap/scss/dropdown';
-@import '~bootstrap/scss/button-group';
+// @import '~bootstrap/scss/transitions';
+// @import '~bootstrap/scss/dropdown';
+// @import '~bootstrap/scss/button-group';
 @import '~bootstrap/scss/nav';
 @import '~bootstrap/scss/navbar';
 @import '~bootstrap/scss/card';
@@ -42,17 +40,17 @@
 // @import '~bootstrap/scss/breadcrumb';
 // @import '~bootstrap/scss/pagination';
 // @import '~bootstrap/scss/badge';
-@import '~bootstrap/scss/alert';
+// @import '~bootstrap/scss/alert';
 // @import '~bootstrap/scss/progress';
 @import '~bootstrap/scss/list-group';
-@import '~bootstrap/scss/close';
+// @import '~bootstrap/scss/close';
 // @import '~bootstrap/scss/toasts';
-@import '~bootstrap/scss/modal';
+// @import '~bootstrap/scss/modal';
 // @import '~bootstrap/scss/tooltip';
 // @import '~bootstrap/scss/popover';
 // @import '~bootstrap/scss/carousel';
 // @import '~bootstrap/scss/spinners';
-@import '~bootstrap/scss/offcanvas';
+// @import '~bootstrap/scss/offcanvas';
 
 // 7. Optionally include utilities API last to generate classes based on the Sass map in `_utilities.scss`
 @import '~bootstrap/scss/utilities/api';
@@ -76,11 +74,10 @@ body {
 
 body {
   color: $white;
-  //background: url(https://billburr.com/wp-content/uploads/2022/11/banner2.png)
-  //no-repeat center center;
+  background: url(https://www.reelcrafter.com/wp-content/uploads/2022/07/voice-over-demo-reel-2.jpg)
+    no-repeat center center;
   overflow: hidden;
   background-size: cover !important;
-  background-position: 100% 100% !important;
   background-color: $black;
 }
 
@@ -108,11 +105,13 @@ body {
 }
 
 header {
-  @for $i from 1 through 6 {
-    h#{$i} {
-      font-family: 'Comfortaa', cursive;
-      letter-spacing: -10px;
-    }
+  h1 {
+    font-family: 'Comfortaa', cursive;
+    letter-spacing: -10px;
+  }
+
+  .display-7 {
+    margin-left: 1%;
   }
 }
 
@@ -131,6 +130,7 @@ footer {
       &.active {
         color: $primary;
         text-decoration: underline;
+        text-underline-offset: 5px;
         text-decoration-color: $white;
       }
     }
@@ -170,6 +170,26 @@ footer {
   }
 }
 
+.title-line {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+
+  &::after {
+    content: '';
+    flex: 1 1 auto;
+    border-bottom: solid 1px $primary;
+    margin-right: 50px;
+  }
+
+  h2 {
+    flex: 0 1 auto;
+    padding: 0 15px 0 15px;
+    color: #fff;
+    margin: 0;
+  }
+}
+
 @media only screen and (max-width: 767px) {
   header {
     @for $i from 1 through 6 {
@@ -180,7 +200,7 @@ footer {
   }
 
   body {
-    background-position: 53% 100% !important;
+    background-position: 35% 100% !important;
   }
 }
 
