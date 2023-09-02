@@ -201,6 +201,10 @@ footer {
   }
 }
 
+.close-icon {
+  font-size: 2.3rem !important;
+}
+
 @media only screen and (max-width: 767px) {
   header {
     @for $i from 1 through 6 {
@@ -213,13 +217,35 @@ footer {
   body {
     background-position: 35% 100% !important;
   }
+
+  .title-line {
+    &::after {
+      margin-right: 10%;
+    }
+  }
+
+  .close-icon {
+    font-size: 2.2rem !important;
+  }
+}
+
+@media only screen and (max-width: 750px){
+  .title-line {
+    &::after {
+      margin-right: 0%;
+    }
+  }
 }
 
 @media only screen and (max-width: 468px) {
   .title-line {
     &::after {
-      margin-right: 10%;
+      margin-right: 15%;
     }
+  }
+
+  .close-icon {
+    font-size: 2rem !important;
   }
 }
 

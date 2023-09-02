@@ -31,10 +31,10 @@ export default function Modal(props: ModalProps) {
       })}>
       <div className="modal-container container-sm my-4">{children}</div>
       <button
-        className="btn transform btn-modal position-fixed top-0 end-0 py-1 px-2 m-2"
+        className="transform btn btn-small btn-modal position-absolute top-0 end-0 py-1 px-2 m-2"
         onClick={() => handleModalToggle(null)}
         aria-label={`Close Modal for ${id}`}>
-        <i className="icon bi bi-x display-5" />
+        <i className="icon bi bi-x close-icon" />
       </button>
     </div>
   );

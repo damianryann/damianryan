@@ -35,3 +35,14 @@
     }
   }
 }
+
+@media screen and (max-width: 425px) {
+  .animated-list {
+    .grid-item {
+      &:hover,
+      &:focus {
+        transform: scale(1.05) !important;
+      }
+    }
+  }
+}
