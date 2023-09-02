@@ -29,7 +29,7 @@ export default function Modal(props: ModalProps) {
         invisible: !animate,
         'on-load-animation': animate
       })}>
-      <div className="container-sm my-4">{children}</div>
+      <div className="modal-container container-sm my-4">{children}</div>
       <button
         className="btn transform btn-modal position-fixed top-0 end-0 py-1 px-2 m-2"
         onClick={() => handleModalToggle(null)}

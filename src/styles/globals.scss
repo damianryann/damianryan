@@ -169,6 +169,11 @@ footer {
   height: 100%;
   background: #020202d4;
   z-index: 9;
+  overflow-y: auto;
+
+  .modal-container {
+    margin-bottom: 4rem !important;
+  }
 
   .icon {
     z-index: 10;

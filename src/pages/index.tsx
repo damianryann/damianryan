@@ -59,6 +59,7 @@ export default function Home() {
                 <div className="title-line">
                   <Typography variant="h2">Work</Typography>
                 </div>
+
                 <p>
                   Below is a selection of the work I am involved in. There are
                   unfortunately some I cannot showcase due to NDA with previous
