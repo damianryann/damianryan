@@ -42,7 +42,7 @@ export default function Header(props: HeaderProps) {
             </div>
           </div>
           {success && (
-            <div className="col-xs-12 col-sm-4 col-md-6 d-flex justify-content-center justify-content-sm-end justify-content-md-end align-items-center gap-4 py-0 px-4 p-sm-4">
+            <div className="col-xs-12 col-sm-5 col-md-6 d-flex justify-content-center justify-content-sm-end justify-content-md-end align-items-center gap-4 py-0 px-4 p-sm-4">
               <a
                 className="icon transform fs-4"
                 href="https://x.com/damooriain"
