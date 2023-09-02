@@ -38,11 +38,17 @@ export default function Home() {
     }
   }, [router.asPath]);
 
+  const canonicalUrl =
+    typeof window === 'undefined' || activeModal === null
+      ? 'https://damianryan.co.uk/'
+      : `https://damianryan.co.uk/#${activeModal}`;
+
   return (
     <Fragment>
       <Head>
         <title>Damian Ryan</title>
         <link rel="icon" href="/favicon.ico" />
+        <link rel="canonical" href={canonicalUrl} key="canonical" />
       </Head>
       <div className="contain">
         <Header title="Damian Ryan" />
