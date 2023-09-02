@@ -56,11 +56,12 @@
 @import '~bootstrap/scss/utilities/api';
 
 // 8. Add additional custom code here
+@import '../components/AnimatedList/AnimatedList.scss';
 @import '~bootstrap-icons';
 
 * {
-  margin: 0px;
-  padding: 0px;
+  margin: 0rem;
+  padding: 0rem;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -81,9 +82,13 @@ body {
   background-color: $black;
 }
 
+p {
+  font-size: 1.1rem;
+}
+
 .contain {
   min-height: 100%;
-  margin: 0px auto;
+  margin: 0rem auto;
   position: relative;
   overflow: hidden;
   height: 100dvh;
@@ -107,7 +112,7 @@ body {
 header {
   h1 {
     font-family: 'Comfortaa', cursive;
-    letter-spacing: -10px;
+    letter-spacing: -0.625rem;
   }
 
   .display-7 {
@@ -125,12 +130,12 @@ footer {
       text-decoration: none;
       text-transform: lowercase;
       font-family: 'Comfortaa', cursive;
-      letter-spacing: -1px;
+      letter-spacing: -0.0625rem;
 
       &.active {
         color: $primary;
         text-decoration: underline;
-        text-underline-offset: 5px;
+        text-underline-offset: 0.3125rem;
         text-decoration-color: $white;
       }
     }
@@ -174,17 +179,18 @@ footer {
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
+  margin-bottom: 1rem;
 
   &::after {
     content: '';
     flex: 1 1 auto;
     border-bottom: solid 1px $primary;
-    margin-right: 50px;
+    margin-right: 0%;
   }
 
   h2 {
     flex: 0 1 auto;
-    padding: 0 15px 0 15px;
+    padding: 0 0.9375rem 0 0;
     color: #fff;
     margin: 0;
   }
@@ -194,13 +200,19 @@ footer {
   header {
     @for $i from 1 through 6 {
       h#{$i} {
-        letter-spacing: -5px;
+        letter-spacing: -0.3125rem;
       }
     }
   }
 
   body {
     background-position: 35% 100% !important;
+  }
+
+  .title-line {
+    &::after {
+      margin-right: 10%;
+    }
   }
 }
 

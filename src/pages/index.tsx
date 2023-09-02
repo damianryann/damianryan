@@ -5,6 +5,8 @@ import Header from '@/components/Header/Header';
 import Footer from '@/components/Footer/Footer';
 import Modal from '@/components/Modal/Modal';
 import { useRouter } from 'next/router';
+import Typography from '@/components/Typography/Typography';
+import AnimatedList from '@/components/AnimatedList/AnimatedList';
 
 export default function Home() {
   const [activeModal, setActiveModal] = useState<string | null>(null);
@@ -49,13 +51,32 @@ export default function Home() {
             {activeModal === 'work' && (
               <Modal id="work" handleModalToggle={handleModalToggle}>
                 <div className="title-line">
-                  <h2>Work</h2>
+                  <Typography variant="h2">Work</Typography>
                 </div>
+                <p>
+                  Below is a selection of the work I am involved in. There are
+                  unfortunately some I cannot showcase due to NDA with previous
+                  employers, however I can provide examples and references on
+                  request.
+                </p>
+                <AnimatedList
+                  items={[
+                    {
+                      name: 'Stephen Graham Projects',
+                      image: '/sgp.jpg',
+                      description:
+                        'React JS Frontend with headless Wordpress for content management served via Wordpress RESTful API.',
+                      href: 'https://stephengrahamprojects.com/'
+                    }
+                  ]}
+                />
               </Modal>
             )}
             {activeModal === 'contact' && (
               <Modal id="contact" handleModalToggle={handleModalToggle}>
-                <h2 className="title-line">Contact</h2>
+                <div className="title-line">
+                  <Typography variant="h2">Contact</Typography>
+                </div>
               </Modal>
             )}
           </section>
