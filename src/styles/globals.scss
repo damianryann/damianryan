@@ -213,7 +213,9 @@ footer {
   body {
     background-position: 35% 100% !important;
   }
+}
 
+@media only screen and (max-width: 468px) {
   .title-line {
     &::after {
       margin-right: 10%;
