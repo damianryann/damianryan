@@ -22,7 +22,7 @@ export default function AnimatedList(props: AnimatedListProps) {
     return href ? (
       <a
         key={index}
-        className="col-sm-12 col-md-6 col-lg-3 text-decoration-none text-white"
+        className="col-sm-12 col-md-6 col-lg-4 text-decoration-none text-white"
         href={href}
         rel="noopener noreferrer"
         target="_blank">

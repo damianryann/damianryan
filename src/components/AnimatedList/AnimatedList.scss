@@ -36,12 +36,12 @@
   }
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 568px) {
   .animated-list {
     .grid-item {
       &:hover,
       &:focus {
-        transform: scale(1.05) !important;
+        transform: scale(1) !important;
       }
     }
   }

@@ -1,10 +1,11 @@
 import Head from 'next/head';
+import { useRouter } from 'next/router';
 import { Fragment, useEffect, useState } from 'react';
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 
 import Header from '@/components/Header/Header';
 import Footer from '@/components/Footer/Footer';
 import Modal from '@/components/Modal/Modal';
-import { useRouter } from 'next/router';
 import Typography from '@/components/Typography/Typography';
 import AnimatedList from '@/components/AnimatedList/AnimatedList';
 
@@ -66,17 +67,44 @@ export default function Home() {
                   employers, however I can provide examples and references on
                   request.
                 </p>
-                <AnimatedList
-                  items={[
-                    {
-                      name: 'Stephen Graham Projects',
-                      image: '/sgp.jpg',
-                      description:
-                        'React JS Frontend with headless Wordpress for content management served via Wordpress RESTful API.',
-                      href: 'https://stephengrahamprojects.com/'
-                    }
-                  ]}
-                />
+
+                <Tabs>
+                  <TabList>
+                    <Tab>Development</Tab>
+                    <Tab>VO</Tab>
+                  </TabList>
+
+                  <TabPanel>
+                    <Typography variant="h3" className="mt-3 mb-0">
+                      Development
+                    </Typography>
+                    <AnimatedList
+                      items={[
+                        {
+                          name: 'Stephen Graham Projects',
+                          image: '/sgp.jpg',
+                          description:
+                            'React JS Frontend with headless Wordpress.',
+                          href: 'https://stephengrahamprojects.com/'
+                        },
+                        {
+                          name: 'Wellow Garage Services',
+                          image: '/wellows.jpg',
+                          description:
+                            'Next JS Static Frontend with SSR.',
+                          href: 'https://wellowgarageservices.com/'
+                        }
+                      ]}
+                    />
+                  </TabPanel>
+                  <TabPanel>
+                    <Typography variant="h3" className="my-3">
+                      Voice Over
+                    </Typography>
+
+                    <p>No VO work available</p>
+                  </TabPanel>
+                </Tabs>
               </Modal>
             )}
             {activeModal === 'contact' && (
