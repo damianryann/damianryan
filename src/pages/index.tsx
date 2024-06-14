@@ -61,14 +61,6 @@ export default function Home() {
                   <Typography variant="h2">Voice Acting</Typography>
                 </div>
 
-                <p>
-                  I have been working with Moshi Kids since November 2023. I've
-                  lent my voice to many voices in the stories I've read
-                  including the Narrator. All voices in the stories I've been in
-                  are done by me, demonstrating a wide range of characters and
-                  personalities.
-                </p>
-
                 <Tabs>
                   <TabList>
                     <Tab>Moshi Kids</Tab>
@@ -78,6 +70,13 @@ export default function Home() {
                     <Typography variant="h3" className="mt-3 mb-0">
                       Moshi Kids
                     </Typography>
+                    <p>
+                      I have been working with Moshi Kids since November 2023.
+                      I've lent my voice to many voices in the stories I've read
+                      including the Narrator. All voices in the stories I've
+                      been in are done by me, demonstrating a wide range of
+                      characters and personalities.
+                    </p>
                     <iframe
                       className="mt-4"
                       width="100%"
