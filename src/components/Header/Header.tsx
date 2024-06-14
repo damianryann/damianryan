@@ -52,7 +52,7 @@ export default function Header(props: HeaderProps) {
             </a>
             <a
               className="icon transform fs-4"
-              href="https://www.youtube.com/@DamianRyanVOs"
+              href="https://www.youtube.com/@DamianRyanVO"
               target="_blank"
               aria-label="YouTube">
               <i className="bi bi-youtube" role="presentation" />
