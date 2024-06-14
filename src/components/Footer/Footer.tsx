@@ -73,20 +73,6 @@ export default function Footer(props: FooterProps) {
                     Voice Acting
                   </a>
                 </li>
-
-                <li
-                  className="nav-item transform mx-4"
-                  aria-labelledby="contact">
-                  <a
-                    id="contact"
-                    className={clsx('fs-4', {
-                      active: activeModal === 'contact'
-                    })}
-                    href="#contact"
-                    onClick={() => onModalToggle('contact')}>
-                    Contact
-                  </a>
-                </li>
               </ul>
             </nav>
           </div>
