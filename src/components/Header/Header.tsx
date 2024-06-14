@@ -1,4 +1,4 @@
-import { useSecretCode } from '@/utilities/useSecretCode';
+//import { useSecretCode } from '@/utilities/useSecretCode';
 import clsx from 'clsx';
 import { useEffect, useState } from 'react';
 
@@ -9,7 +9,7 @@ interface HeaderProps {
 export default function Header(props: HeaderProps) {
   const { title } = props;
 
-  const success = useSecretCode();
+  //const success = useSecretCode();
 
   const websiteName = title.toLowerCase().replace(' ', '');
 
@@ -41,24 +41,23 @@ export default function Header(props: HeaderProps) {
               </div>*/}
             </div>
           </div>
-          {success && (
-            <div className="col-xs-12 col-sm-5 col-md-6 d-flex justify-content-center justify-content-sm-end justify-content-md-end align-items-center gap-4 py-0 px-4 p-sm-4">
-              <a
-                className="icon transform fs-4"
-                href="https://x.com/damooriain"
-                target="_blank"
-                aria-label="Twitter">
-                <i className="bi bi-twitter" role="presentation" />
-              </a>
-              <a
-                className="icon transform fs-4"
-                href="https://www.youtube.com/@DamianRyanVOs"
-                target="_blank"
-                aria-label="YouTube">
-                <i className="bi bi-youtube" role="presentation" />
-              </a>
-            </div>
-          )}
+
+          <div className="col-xs-12 col-sm-5 col-md-6 d-flex justify-content-center justify-content-sm-end justify-content-md-end align-items-center gap-4 py-0 px-4 p-sm-4">
+            <a
+              className="icon transform fs-4"
+              href="https://x.com/damooriain"
+              target="_blank"
+              aria-label="x">
+              <i className="bi bi-twitter-x" role="presentation" />
+            </a>
+            <a
+              className="icon transform fs-4"
+              href="https://www.youtube.com/@DamianRyanVOs"
+              target="_blank"
+              aria-label="YouTube">
+              <i className="bi bi-youtube" role="presentation" />
+            </a>
+          </div>
         </div>
       </div>
     </header>

@@ -8,8 +8,8 @@
     "export": "next export"
   },
   "dependencies": {
-    "bootstrap": "^5.2.3",
-    "bootstrap-icons": "^1.10.5",
+    "bootstrap": "^5.3.3",
+    "bootstrap-icons": "^1.11.3",
     "clsx": "^2.0.0",
     "cypress": "^10.0.3",
     "next": "^12.1.5",
