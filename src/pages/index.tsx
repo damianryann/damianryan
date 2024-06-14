@@ -55,10 +55,42 @@ export default function Home() {
         <Header title="Damian Ryan" />
         <main>
           <section className="d-flex align-items-end justify-content-start">
-            {activeModal === 'work' && (
-              <Modal id="work" handleModalToggle={handleModalToggle}>
+            {activeModal === 'voice' && (
+              <Modal id="voice" handleModalToggle={handleModalToggle}>
                 <div className="title-line">
-                  <Typography variant="h2">Work</Typography>
+                  <Typography variant="h2">Voice Acting</Typography>
+                </div>
+
+                <p>
+                  I have been working with Moshi Kids since November 2023. I've
+                  lent my voice to many voices in the stories I've read
+                  including the Narrator. All voices in the stories I've been in
+                  are done by me, demonstrating a wide range of characters and
+                  personalities.
+                </p>
+
+                <Tabs>
+                  <TabList>
+                    <Tab>Moshi Kids</Tab>
+                  </TabList>
+
+                  <TabPanel>
+                    <Typography variant="h3" className="mt-3 mb-0">
+                      Moshi Kids
+                    </Typography>
+                    <iframe
+                      width="100%"
+                      height="120"
+                      src="https://player-widget.mixcloud.com/widget/iframe/?hide_cover=1&feed=%2Fdamianryan%2Fmoshi-kids-vo-reel%2F"
+                    />
+                  </TabPanel>
+                </Tabs>
+              </Modal>
+            )}
+            {activeModal === 'development' && (
+              <Modal id="development" handleModalToggle={handleModalToggle}>
+                <div className="title-line">
+                  <Typography variant="h2">Development</Typography>
                 </div>
 
                 <p>
@@ -71,7 +103,6 @@ export default function Home() {
                 <Tabs>
                   <TabList>
                     <Tab>Development</Tab>
-                    <Tab>VO</Tab>
                   </TabList>
 
                   <TabPanel>
@@ -90,19 +121,11 @@ export default function Home() {
                         {
                           name: 'Wellow Garage Services',
                           image: '/wellows.jpg',
-                          description:
-                            'Next JS Static Frontend with SSR.',
+                          description: 'Next JS Static Frontend with SSR.',
                           href: 'https://wellowgarageservices.com/'
                         }
                       ]}
                     />
-                  </TabPanel>
-                  <TabPanel>
-                    <Typography variant="h3" className="my-3">
-                      Voice Over
-                    </Typography>
-
-                    <p>No VO work available</p>
                   </TabPanel>
                 </Tabs>
               </Modal>

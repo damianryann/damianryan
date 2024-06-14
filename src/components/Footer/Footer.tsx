@@ -48,30 +48,45 @@ export default function Footer(props: FooterProps) {
                     Home
                   </a>
                 </li>
-                <li className="nav-item transform mx-4" aria-labelledby="work">
+                <li
+                  className="nav-item transform mx-4"
+                  aria-labelledby="development">
                   <a
-                    id="work"
+                    id="development"
                     className={clsx('fs-4', {
-                      active: activeModal === 'work'
+                      active: activeModal === 'development'
                     })}
-                    href="#work"
-                    onClick={() => onModalToggle('work')}>
-                    Work
+                    href="#development"
+                    onClick={() => onModalToggle('development')}>
+                    Development
                   </a>
                 </li>
-                {success && (
-                  <li className="nav-item transform mx-4" aria-labelledby="contact">
-                    <a
-                      id="contact"
-                      className={clsx('fs-4', {
-                        active: activeModal === 'contact'
-                      })}
-                      href="#contact"
-                      onClick={() => onModalToggle('contact')}>
-                      Contact
-                    </a>
-                  </li>
-                )}
+
+                <li className="nav-item transform mx-4" aria-labelledby="voice">
+                  <a
+                    id="voice"
+                    className={clsx('fs-4', {
+                      active: activeModal === 'voice'
+                    })}
+                    href="#voice"
+                    onClick={() => onModalToggle('voice')}>
+                    Voice Acting
+                  </a>
+                </li>
+
+                <li
+                  className="nav-item transform mx-4"
+                  aria-labelledby="contact">
+                  <a
+                    id="contact"
+                    className={clsx('fs-4', {
+                      active: activeModal === 'contact'
+                    })}
+                    href="#contact"
+                    onClick={() => onModalToggle('contact')}>
+                    Contact
+                  </a>
+                </li>
               </ul>
             </nav>
           </div>
