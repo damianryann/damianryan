@@ -51,10 +51,10 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
         <link rel="canonical" href={canonicalUrl} key="canonical" />
       </Head>
-      <div className="contain">
+      <div className="relative contain">
         <Header title="Damian Ryan" />
         <main>
-          <section className="d-flex align-items-end justify-content-start">
+          <section className="flex items-end justify-start">
             {activeModal === 'voice' && (
               <Modal id="voice" handleModalToggle={handleModalToggle}>
                 <div className="title-line">

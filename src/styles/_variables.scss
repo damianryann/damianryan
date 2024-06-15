@@ -10,18 +10,6 @@ $white: #fff;
 
 $footer: #000000b5;
 
-$theme-colors: (
-  'primary': $primary,
-  'secondary': $secondary,
-  'background': $background,
-  'success': $success,
-  'info': $info,
-  'warning': $warning,
-  'danger': $danger,
-  'white': $white,
-  'black': $black
-) !default;
-
 .smaller {
   font-size: 0.75rem;
 }

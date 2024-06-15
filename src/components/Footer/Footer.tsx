@@ -28,45 +28,45 @@ export default function Footer(props: FooterProps) {
 
   return (
     <footer
-      className={clsx('text-white position-absolute bottom-0 w-100', {
+      className={clsx('text-white absolute bottom-0 w-full', {
         'opacity-0': !animate,
-        'on-load-animation': animate
+        'opacity-100 transition-opacity duration-1000': animate
       })}>
-      <div className="container-fluid">
-        <div className="row">
-          <div className="col-md-6 ps-4 py-1 overflow-scroll">
-            <nav className="navbar navbar-expand p-0">
-              <ul className="navbar-nav">
-                <li className="nav-item transform me-4" aria-labelledby="home">
+      <div className="container mx-auto">
+        <div className="flex">
+          <div className="w-full md:w-1/2 p-4 overflow-scroll">
+            <nav className="flex">
+              <ul className="flex space-x-4">
+                <li className="nav-item" aria-labelledby="home">
                   <a
                     id="home"
-                    className={clsx('fs-4', {
-                      active: activeModal === null
+                    className={clsx('text-lg', {
+                      'font-bold': activeModal === null,
+                      'font-normal': activeModal !== null
                     })}
                     href="#"
                     onClick={() => onModalToggle(null)}>
                     Home
                   </a>
                 </li>
-                <li
-                  className="nav-item transform mx-4"
-                  aria-labelledby="development">
+                <li className="nav-item" aria-labelledby="development">
                   <a
                     id="development"
-                    className={clsx('fs-4', {
-                      active: activeModal === 'development'
+                    className={clsx('text-lg', {
+                      'font-bold': activeModal === 'development',
+                      'font-normal': activeModal !== 'development'
                     })}
                     href="#development"
                     onClick={() => onModalToggle('development')}>
                     Development
                   </a>
                 </li>
-
-                <li className="nav-item transform mx-4" aria-labelledby="voice">
+                <li className="nav-item" aria-labelledby="voice">
                   <a
                     id="voice"
-                    className={clsx('fs-4', {
-                      active: activeModal === 'voice'
+                    className={clsx('text-lg', {
+                      'font-bold': activeModal === 'voice',
+                      'font-normal': activeModal !== 'voice'
                     })}
                     href="#voice"
                     onClick={() => onModalToggle('voice')}>
@@ -76,10 +76,8 @@ export default function Footer(props: FooterProps) {
               </ul>
             </nav>
           </div>
-          <div className="col-md-6 px-4 py-1 d-flex justify-content-sm-start justify-content-md-end align-items-center bg-xs-black bg-sm-black bg-md-none small">
-            <span className="smaller">
-              &copy; {currentYear} Damian Ryan. All rights reserved.
-            </span>
+          <div className="w-full md:w-1/2 p-4 flex justify-start md:justify-end items-center bg-gray-800 text-xs md:text-sm">
+            <span>&copy; {currentYear} Damian Ryan. All rights reserved.</span>
           </div>
         </div>
       </div>

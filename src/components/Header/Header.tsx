@@ -27,31 +27,31 @@ export default function Header(props: HeaderProps) {
 
   return (
     <header
-      className={clsx('position-fixed w-100 top-0 start-0', {
+      className={clsx('fixed w-full top-0 left-0', {
         'opacity-0': !animate,
-        'on-load-animation': animate
+        'opacity-100 transition-opacity duration-1000': animate
       })}>
-      <div className="container-fluid">
-        <div className="row">
-          <div className="col-xs-12 col-sm-7 col-md-6 p-4">
-            <div className="d-flex flex-column align-items-center align-items-sm-start align-items-md-start justify-content-center">
-              <h1 className="display-1 text-primary mb-0">{websiteName}</h1>
-              {/*<div className="display-7 mt-n-title">
-                Developer | VO Artist | Writer
-              </div>*/}
+      <div className="container mx-auto">
+        <div className="flex flex-wrap">
+          <div className="w-full sm:w-7/12 md:w-6/12 p-4">
+            <div className="flex flex-col items-center sm:items-start md:items-start justify-center">
+              <h1 className="text-6xl text-primary mb-0">{websiteName}</h1>
+              {/*<div className="text-2xl mt-n-title">
+              Developer | VO Artist | Writer
+            </div>*/}
             </div>
           </div>
 
-          <div className="col-xs-12 col-sm-5 col-md-6 d-flex justify-content-center justify-content-sm-end justify-content-md-end align-items-center gap-4 py-0 px-4 p-sm-4">
+          <div className="w-full sm:w-5/12 md:w-6/12 flex justify-center sm:justify-end md:justify-end items-center gap-4 py-0 px-4 sm:p-4">
             <a
-              className="icon transform fs-4"
+              className="transform text-2xl"
               href="https://x.com/damooriain"
               target="_blank"
               aria-label="x">
               <i className="bi bi-twitter-x" role="presentation" />
             </a>
             <a
-              className="icon transform fs-4"
+              className="transform text-2xl"
               href="https://www.youtube.com/@DamianRyanVO"
               target="_blank"
               aria-label="YouTube">
