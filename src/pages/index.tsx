@@ -71,11 +71,12 @@ export default function Home() {
                       Moshi Kids
                     </Typography>
                     <p>
-                      I have been working with Moshi Kids since November 2023.
-                      I've lent my voice to many voices in the stories I've read
-                      including the Narrator. All voices in the stories I've
-                      been in are done by me, demonstrating a wide range of
-                      characters and personalities.
+                      Since November 2023, I have been collaborating with Moshi
+                      Kids, lending my voice to a variety of characters and
+                      Narrators in their stories. Each voice in the stories I've
+                      worked on is performed by me, showcasing my ability to
+                      bring a wide range of characters and personalities to
+                      life.
                     </p>
                     <iframe
                       className="mt-4"
