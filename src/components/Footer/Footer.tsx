@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import clsx from 'clsx';
 
-import { useSecretCode } from '@/utilities/useSecretCode';
+//import { useSecretCode } from '@/utilities/useSecretCode';
 
 interface FooterProps {
   activeModal: string | null;
@@ -10,7 +10,7 @@ interface FooterProps {
 
 export default function Footer(props: FooterProps) {
   const { activeModal, onModalToggle } = props;
-  const success = useSecretCode();
+  //const success = useSecretCode();
 
   const currentYear = new Date().getFullYear();
 
@@ -28,7 +28,7 @@ export default function Footer(props: FooterProps) {
 
   return (
     <footer
-      className={clsx('text-white absolute bottom-0 w-full', {
+      className={clsx('text-white absolute bottom-0 w-full !z-20', {
         'opacity-0': !animate,
         'opacity-100 transition-opacity duration-1000': animate
       })}>

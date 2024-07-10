@@ -25,7 +25,7 @@ export default function Modal(props: ModalProps) {
   return (
     <div
       id={id}
-      className={clsx('main-modal', {
+      className={clsx('main-modal !z-50', {
         invisible: !animate,
         'on-load-animation': animate
       })}>

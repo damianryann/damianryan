@@ -43,14 +43,14 @@ export default function Header(props: HeaderProps) {
 
           <div className="w-full sm:w-5/12 md:w-6/12 flex justify-center sm:justify-end md:justify-end items-center gap-4 py-0 px-4 sm:p-4">
             <a
-              className="transform text-2xl"
+              className="transform duration-300 text-2xl hover:text-primary"
               href="https://x.com/damooriain"
               target="_blank"
               aria-label="x">
               <i className="bi bi-twitter-x" role="presentation" />
             </a>
             <a
-              className="transform text-2xl"
+              className="transform duration-300 text-2xl hover:text-primary"
               href="https://www.youtube.com/@DamianRyanVO"
               target="_blank"
               aria-label="YouTube">
