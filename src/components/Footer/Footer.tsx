@@ -34,7 +34,7 @@ export default function Footer(props: FooterProps) {
       })}>
       <div className="mx-auto">
         <div className="grid grid-cols-2">
-          <div className="col-span-2 md:col-span-1 p-4 overflow-scroll">
+          <div className="col-span-2 md:col-span-1 px-4 py-2 overflow-scroll">
             <nav className="flex">
               <ul className="flex space-x-8">
                 <li
@@ -85,7 +85,7 @@ export default function Footer(props: FooterProps) {
               </ul>
             </nav>
           </div>
-          <div className="col-span-2 md:col-span-1 p-4 flex justify-start md:justify-end items-center text-xs md:text-sm bg-black md:bg-transparent">
+          <div className="col-span-2 md:col-span-1 px-4 py-2 flex justify-start md:justify-end items-center text-xs md:text-sm bg-black md:bg-transparent">
             <span>&copy; {currentYear} Damian Ryan. All rights reserved.</span>
           </div>
         </div>
