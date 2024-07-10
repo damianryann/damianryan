@@ -38,9 +38,6 @@ export default function Header(props: HeaderProps) {
               <h1 className="text-7xl text-primary font-light mb-0">
                 {websiteName}
               </h1>
-              {/*<div className="text-2xl mt-n-title">
-              Developer | VO Artist | Writer
-            </div>*/}
             </div>
           </div>
 

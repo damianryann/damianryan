@@ -37,7 +37,7 @@ export default function Home() {
         setActiveModal(modalId);
       }
     }
-  }, [router.asPath]);
+  }, [router, router.asPath]);
 
   const canonicalUrl =
     typeof window === 'undefined' || activeModal === null
@@ -75,10 +75,10 @@ export default function Home() {
                     <p className="mb-4">
                       Since November 2023, I have been collaborating with Moshi
                       Kids, lending my voice to a variety of characters and
-                      Narrators in their stories. Each voice in the stories I've
-                      worked on is performed by me, showcasing my ability to
-                      bring a wide range of characters and personalities to
-                      life.
+                      Narrators in their stories. Each voice in the stories
+                      I&apos;ve worked on is performed by me, showcasing my
+                      ability to bring a wide range of characters and
+                      personalities to life.
                     </p>
                     <iframe
                       className="mt-4"
@@ -108,7 +108,7 @@ export default function Home() {
                       Clients
                     </Typography>
                     <p className="mb-4">
-                      List of clients I've worked with on a freelance basis,
+                      List of clients I have worked with on a freelance basis,
                       ranging from small local businesses to community
                       personalities and filmmakers.
                     </p>
