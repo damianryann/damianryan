@@ -31,11 +31,13 @@ export default function Header(props: HeaderProps) {
         'opacity-0': !animate,
         'opacity-100 transition-opacity duration-1000': animate
       })}>
-      <div className="container mx-auto">
+      <div className="mx-auto">
         <div className="flex flex-wrap">
           <div className="w-full sm:w-7/12 md:w-6/12 p-4">
             <div className="flex flex-col items-center sm:items-start md:items-start justify-center">
-              <h1 className="text-6xl text-primary mb-0">{websiteName}</h1>
+              <h1 className="text-7xl text-primary font-light mb-0">
+                {websiteName}
+              </h1>
               {/*<div className="text-2xl mt-n-title">
               Developer | VO Artist | Writer
             </div>*/}

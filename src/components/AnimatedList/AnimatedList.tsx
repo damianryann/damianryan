@@ -22,11 +22,11 @@ export default function AnimatedList(props: AnimatedListProps) {
     return href ? (
       <a
         key={index}
-        className="col-sm-12 col-md-6 col-lg-4 text-decoration-none text-white"
+        className="col-span-2 text-decoration-none text-white"
         href={href}
         rel="noopener noreferrer"
         target="_blank">
-        <div className="grid-item ">
+        <div className="grid-item">
           <img className="w-100" src={image} alt={name} />
           <h3 className="fw-bold text-primary my-2">{name}</h3>
           <p>{description}</p>
@@ -41,5 +41,7 @@ export default function AnimatedList(props: AnimatedListProps) {
     );
   });
 
-  return <div className="animated-list row">{listItems}</div>;
+  return (
+    <div className="animated-list grid grid-cols-6 gap-4">{listItems}</div>
+  );
 }

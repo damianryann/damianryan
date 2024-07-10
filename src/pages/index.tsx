@@ -58,7 +58,9 @@ export default function Home() {
             {activeModal === 'voice' && (
               <Modal id="voice" handleModalToggle={handleModalToggle}>
                 <div className="title-line">
-                  <Typography variant="h2">Voice Acting</Typography>
+                  <Typography variant="h2" className="text-4xl">
+                    Voice Acting
+                  </Typography>
                 </div>
 
                 <Tabs>
@@ -67,10 +69,10 @@ export default function Home() {
                   </TabList>
 
                   <TabPanel>
-                    <Typography variant="h3" className="mt-3 mb-0">
+                    <Typography variant="h3" className="text-2xl mt-3 mb-2">
                       Moshi Kids
                     </Typography>
-                    <p>
+                    <p className="mb-4">
                       Since November 2023, I have been collaborating with Moshi
                       Kids, lending my voice to a variety of characters and
                       Narrators in their stories. Each voice in the stories I've
@@ -91,25 +93,25 @@ export default function Home() {
             {activeModal === 'development' && (
               <Modal id="development" handleModalToggle={handleModalToggle}>
                 <div className="title-line">
-                  <Typography variant="h2">Development</Typography>
+                  <Typography variant="h2" className="text-4xl">
+                    Development
+                  </Typography>
                 </div>
-
-                <p>
-                  Below is a selection of the work I am involved in. There are
-                  unfortunately some I cannot showcase due to NDA with previous
-                  employers, however I can provide examples and references on
-                  request.
-                </p>
 
                 <Tabs>
                   <TabList>
-                    <Tab>Development</Tab>
+                    <Tab>Clients</Tab>
                   </TabList>
 
                   <TabPanel>
-                    <Typography variant="h3" className="mt-3 mb-0">
-                      Development
+                    <Typography variant="h3" className="text-2xl mt-3 mb-2">
+                      Clients
                     </Typography>
+                    <p className="mb-4">
+                      List of clients I've worked with on a freelance basis,
+                      ranging from small local businesses to community
+                      personalities and filmmakers.
+                    </p>
                     <AnimatedList
                       items={[
                         {
@@ -134,7 +136,9 @@ export default function Home() {
             {activeModal === 'contact' && (
               <Modal id="contact" handleModalToggle={handleModalToggle}>
                 <div className="title-line">
-                  <Typography variant="h2">Contact</Typography>
+                  <Typography variant="h2" className="text-4xl">
+                    Contact
+                  </Typography>
                 </div>
               </Modal>
             )}
