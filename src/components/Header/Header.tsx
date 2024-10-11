@@ -35,7 +35,7 @@ export default function Header(props: HeaderProps) {
         <div className="flex flex-wrap">
           <div className="w-full sm:w-7/12 md:w-6/12 p-4">
             <div className="flex flex-col items-center sm:items-start md:items-start justify-center">
-              <h1 className="text-7xl text-primary font-light mb-0">
+              <h1 className="text-6xl md:text-7xl text-primary font-light mb-0">
                 {websiteName}
               </h1>
             </div>
