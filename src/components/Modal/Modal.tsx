@@ -1,33 +1,21 @@
-import { useEffect, useState } from 'react';
 import clsx from 'clsx';
 
 interface ModalProps {
   id: string;
   children: React.ReactNode;
   handleModalToggle: Function;
+  activeModal: string | null;
 }
 
 export default function Modal(props: ModalProps) {
-  const { id, children, handleModalToggle } = props;
-
-  const [animate, setAnimate] = useState(false);
-
-  useEffect(() => {
-    const animationTimeout = setTimeout(() => {
-      setAnimate(true);
-    }, 100);
-
-    return () => {
-      clearTimeout(animationTimeout);
-    };
-  }, []);
+  const { id, children, handleModalToggle, activeModal } = props;
 
   return (
     <div
       id={id}
-      className={clsx('main-modal !z-50', {
-        invisible: !animate,
-        'on-load-animation': animate
+      className={clsx('main-modal !z-50 transition duration-500', {
+        'translate-y-0 opacity-1': activeModal === id,
+        '-translate-y-full opacity-0': activeModal !== id
       })}>
       <div className="modal-container container my-4">{children}</div>
       <button
