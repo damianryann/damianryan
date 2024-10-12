@@ -19,7 +19,7 @@ export default function Footer(props: FooterProps) {
   useEffect(() => {
     const animationTimeout = setTimeout(() => {
       setAnimate(true);
-    }, 900);
+    }, 1000);
 
     return () => {
       clearTimeout(animationTimeout);
@@ -28,10 +28,13 @@ export default function Footer(props: FooterProps) {
 
   return (
     <div
-      className={clsx('text-white absolute bottom-0 w-full !z-20', {
-        'opacity-0': !animate,
-        'opacity-100 transition-opacity duration-1000': animate
-      })}>
+      className={clsx(
+        'text-white absolute bottom-0 w-full !z-20 transition duration-1000',
+        {
+          'translate-y-full': !animate,
+          '-translate-y-0': animate
+        }
+      )}>
       <div className="flex w-full p-4">
         <span className="md:ms-auto italic">
           Photo by{' '}

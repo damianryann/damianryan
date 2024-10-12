@@ -1,4 +1,3 @@
-//import { useSecretCode } from '@/utilities/useSecretCode';
 import clsx from 'clsx';
 import { useEffect, useState } from 'react';
 
@@ -18,7 +17,7 @@ export default function Header(props: HeaderProps) {
   useEffect(() => {
     const animationTimeout = setTimeout(() => {
       setAnimate(true);
-    }, 900);
+    }, 1000);
 
     return () => {
       clearTimeout(animationTimeout);
@@ -27,9 +26,9 @@ export default function Header(props: HeaderProps) {
 
   return (
     <header
-      className={clsx('fixed w-full top-0 left-0', {
-        'opacity-0': !animate,
-        'opacity-100 transition-opacity duration-1000': animate
+      className={clsx('fixed w-full top-0 left-0 transition duration-1000', {
+        '-translate-y-full': !animate,
+        'translate-y-0': animate
       })}>
       <div className="mx-auto">
         <div className="flex flex-wrap">
