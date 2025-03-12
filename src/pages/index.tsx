@@ -1,14 +1,62 @@
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { Fragment, useEffect, useState } from 'react';
-import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 
 import Header from '@/components/Header/Header';
 import Footer from '@/components/Footer/Footer';
-import Modal from '@/components/Modal/Modal';
-import Typography from '@/components/Typography/Typography';
 
-export default function Home() {
+import { readItems, readSingleton } from '@directus/sdk';
+import {
+  AboutSchema,
+  ReelsSchema,
+  client,
+  NavigationSchema
+} from '@/libs/directus';
+import AboutModal from '@/components/AboutModal/AboutModal';
+import ReelsModal from '@/components/ReelsModal/ReelsModal';
+
+export async function getServerSideProps() {
+  try {
+    const [about, navigation, reels, reels_files] = await Promise.all([
+      client.request(readSingleton('about')),
+      client.request(readItems('navigation')),
+      client.request(readItems('reels')),
+      client.request(readItems('reels_files'))
+    ]);
+
+    return {
+      props: {
+        about,
+        navigation,
+        reels,
+        reelsFiles: reels_files
+      }
+    };
+  } catch (error) {
+    console.error('Error fetching data:', error);
+
+    return {
+      props: {
+        about: null,
+        navigation: [],
+        reels: [],
+        reelsFiles: []
+      }
+    };
+  }
+}
+
+export default function Home({
+  about,
+  navigation,
+  reels,
+  reelsFiles
+}: {
+  about: AboutSchema | null;
+  navigation: NavigationSchema[];
+  reels: ReelsSchema[] | null;
+  reelsFiles: any[];
+}) {
   const [activeModal, setActiveModal] = useState<string | null>(null);
 
   const router = useRouter();
@@ -37,10 +85,10 @@ export default function Home() {
 
   useEffect(() => {
     // Check the query parameter to see which modal should be opened
-    if (query.modal === 'voice') {
-      setActiveModal('voice');
-    } else if (query.modal === 'development') {
-      setActiveModal('development');
+    if (query.modal === 'reels') {
+      setActiveModal('reels');
+    } else if (query.modal === 'about') {
+      setActiveModal('about');
     } else if (query.modal === 'contact') {
       setActiveModal('contact');
     } else {
@@ -62,56 +110,30 @@ export default function Home() {
       </Head>
       <div className="relative contain">
         <Header title="Damian Ryan" />
-        <main>
+        <main className="h-screen w-full flex">
           <section className="flex items-end justify-start">
-            <Modal
-              id="voice"
-              handleModalToggle={handleModalToggle}
-              activeModal={activeModal}>
-              <div className="title-line">
-                <Typography variant="h2" className="text-4xl">
-                  Voice Acting
-                </Typography>
-              </div>
-
-              <Tabs>
-                <TabList>
-                  <Tab>Audiobooks</Tab>
-                </TabList>
-
-                <TabPanel>
-                  <Typography variant="h3" className="text-2xl mt-3 mb-2">
-                    Moshi Kids
-                  </Typography>
-                  <p className="mb-4">
-                    Since November 2023, I have been collaborating with Moshi
-                    Kids, lending my voice to a variety of characters and
-                    Narrators in their childrens stories. Each voice in the
-                    stories I&apos;ve worked on is performed by me, showcasing
-                    my ability to bring a wide range of characters and
-                    personalities to life.
-                  </p>
-                  <iframe
-                    width="100%"
-                    height="120"
-                    src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1927603154&color=%239b0000&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&show_artwork=false"></iframe>
-                </TabPanel>
-              </Tabs>
-            </Modal>
-
-            <Modal
-              id="contact"
-              handleModalToggle={handleModalToggle}
-              activeModal={activeModal}>
-              <div className="title-line">
-                <Typography variant="h2" className="text-4xl">
-                  Contact
-                </Typography>
-              </div>
-            </Modal>
+            {about && (
+              <AboutModal
+                about={about}
+                activeModal={activeModal}
+                handleModalToggle={handleModalToggle}
+              />
+            )}
+            {reels && reels.length > 0 && (
+              <ReelsModal
+                reels={reels}
+                reelsFiles={reelsFiles}
+                activeModal={activeModal}
+                handleModalToggle={handleModalToggle}
+              />
+            )}
           </section>
         </main>
-        <Footer activeModal={activeModal} onModalToggle={handleModalToggle} />
+        <Footer
+          data={navigation}
+          activeModal={activeModal}
+          onModalToggle={handleModalToggle}
+        />
       </div>
     </Fragment>
   );

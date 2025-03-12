@@ -8,6 +8,7 @@
     "export": "next export"
   },
   "dependencies": {
+    "@directus/sdk": "^18.0.2",
     "bootstrap-icons": "^1.11.3",
     "clsx": "^2.0.0",
     "cypress": "^10.0.3",

@@ -103,7 +103,7 @@ body {
 }
 
 p {
-  font-size: 1.1rem;
+  font-size: 1.3rem;
 }
 
 .contain {
@@ -124,7 +124,8 @@ p {
 }
 
 @for $i from 1 through 6 {
-  h#{$i} {
+  h#{$i},
+  .font-primary {
     font-family: 'Comfortaa', cursive;
   }
 }
@@ -145,7 +146,8 @@ footer {
   z-index: 100;
 
   .nav-item {
-    button {
+    button,
+    a {
       color: $white;
       text-decoration: none;
       text-transform: lowercase;

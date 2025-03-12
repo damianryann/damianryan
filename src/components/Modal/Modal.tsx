@@ -13,9 +13,9 @@ export default function Modal(props: ModalProps) {
   return (
     <div
       id={id}
-      className={clsx('main-modal !z-50 transition duration-500', {
+      className={clsx('main-modal !z-50 transition-all duration-800', {
         'translate-y-0 opacity-1': activeModal === id,
-        '-translate-y-full opacity-0': activeModal !== id
+        'translate-y-full opacity-0': activeModal !== id
       })}>
       <div className="modal-container container my-4">{children}</div>
       <button
