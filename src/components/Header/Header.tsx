@@ -56,7 +56,7 @@ export default function Header(props: HeaderProps) {
             </a>
             <a
               className="transform duration-300 text-2xl hover:text-primary"
-              href="https://instagr.am/damanryanvo"
+              href="https://instagr.am/damianryanvo"
               target="_blank"
               aria-label="x">
               <i className="bi bi-instagram" role="presentation" />
