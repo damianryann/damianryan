@@ -25,7 +25,19 @@ export default function ReelsModal(props: ReelsModalProps) {
           Reels
         </Typography>
       </div>
-
+      <div className="grid grid-cols-12 gap-8 mb-8">
+        <div className="col-span-12">
+          <div className="w-full aspect-video">
+            <iframe
+              className="w-full h-full"
+              src="https://www.youtube.com/embed/F2B0eHOwxPc?controls=1&modestbranding=1&rel=0&showinfo=0"
+              title="Damian Ryan - Voice Over Introduction"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            />
+          </div>
+        </div>
+      </div>
       {reels &&
         reels.map((reel, i) => (
           <Fragment key={i}>
