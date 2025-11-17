@@ -42,7 +42,7 @@ export default function AboutModal(props: AboutModalProps) {
         </figure>
 
         <div className="col-span-12 lg:col-span-6 flex pb-8">
-          <div className="border border-primary p-12 my-auto rounded-md bg-black/40">
+          <div className="my-auto">
             <h3 className="text-primary text-5xl mb-4 light">{subtitle}</h3>
             <p dangerouslySetInnerHTML={{ __html: body }} />
           </div>
