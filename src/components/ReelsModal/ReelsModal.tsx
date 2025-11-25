@@ -1,7 +1,7 @@
+import { useState } from 'react';
 import { ReelsSchema } from '@/libs/directus';
 import Modal from '../Modal/Modal';
 import Typography from '../Typography/Typography';
-import { Fragment } from 'react';
 import { CMS_URL } from '@/libs/globals';
 
 interface ReelsModalProps {
@@ -12,8 +12,69 @@ interface ReelsModalProps {
 }
 
 export default function ReelsModal(props: ReelsModalProps) {
-  const { reels, activeModal, handleModalToggle, reelsFiles } = props;
+  const { reelsFiles, activeModal, handleModalToggle } = props;
+
   const assetUrl = `${CMS_URL}/assets`;
+
+  // -----------------------------------------
+  // Define Tabs + Their Previews
+  // Replace the embed/img URLs as needed
+  // -----------------------------------------
+  const demoItems = [
+    {
+      id: 'animation',
+      title: 'Animation Demo',
+      preview: (
+        <iframe
+          className="w-full h-full rounded-xl"
+          src="https://www.youtube.com/embed/F2B0eHOwxPc"
+          title="Animation Demo"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        />
+      ),
+      audioId: 'animation-audio'
+    },
+    {
+      id: 'anime',
+      title: 'Anime Demo',
+      preview: (
+        <img
+          src="/anime-demo.jpg"
+          className="w-full h-full object-cover rounded-xl"
+        />
+      ),
+      audioId: 'anime-audio'
+    },
+    {
+      id: 'commercial',
+      title: 'Commercial Demo',
+      preview: (
+        <img
+          src="/commercial-demo.jpg"
+          className="w-full h-full object-cover rounded-xl"
+        />
+      ),
+      audioId: 'commercial-audio'
+    },
+    {
+      id: 'videogame',
+      title: 'Video Game Demo',
+      preview: (
+        <img
+          src="/videogame-demo.jpg"
+          className="w-full h-full object-cover rounded-xl"
+        />
+      ),
+      audioId: 'videogame-audio'
+    }
+  ];
+
+  // -----------------------------------------
+  // Currently Selected Tab
+  // -----------------------------------------
+  const [selected, setSelected] = useState(demoItems[0].id);
+
+  const activeDemo = demoItems.find(item => item.id === selected);
 
   return (
     <Modal
@@ -25,51 +86,44 @@ export default function ReelsModal(props: ReelsModalProps) {
           Reels
         </Typography>
       </div>
-      <div className="grid grid-cols-12 gap-8 mb-8">
-        <div className="col-span-12">
-          <div className="w-full aspect-video">
-            <iframe
-              className="w-full h-full"
-              src="https://www.youtube.com/embed/F2B0eHOwxPc?controls=1&modestbranding=1&rel=0&showinfo=0"
-              title="Damian Ryan - Voice Over Introduction"
-              referrerPolicy="strict-origin-when-cross-origin"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            />
+
+      {/* 50/50 Layout */}
+      <div className="grid grid-cols-12 gap-8">
+        {/* LEFT SIDE – Tabs */}
+        <div className="col-span-12 md:col-span-6 border-r pr-6">
+          <div className="space-y-6">
+            {demoItems.map(item => {
+              const audioFile = reelsFiles.find(f => f.id === item.audioId);
+              const audioUrl = audioFile
+                ? `${assetUrl}/${audioFile.directus_files_id}.mp3`
+                : null;
+
+              return (
+                <div
+                  key={item.id}
+                  onMouseEnter={() => setSelected(item.id)}
+                  onClick={() => setSelected(item.id)}
+                  className={`p-4 rounded-lg cursor-pointer transition
+                    ${selected === item.id ? 'bg-primary text-black' : 'hover:bg-primary '}
+                  `}>
+                  <Typography variant="h3" className="text-2xl font-semibold">
+                    {item.title}
+                  </Typography>
+
+                  <audio controls className="w-full mt-2">
+                    <source src="" type="audio/mpeg" />
+                  </audio>
+                </div>
+              );
+            })}
           </div>
         </div>
+
+        {/* RIGHT SIDE – Preview */}
+        <div className="col-span-12 md:col-span-6">
+          <div className="w-full aspect-video">{activeDemo?.preview}</div>
+        </div>
       </div>
-      {reels &&
-        reels.map((reel, i) => (
-          <Fragment key={i}>
-            <Typography variant="h3" className="text-3xl font-semibold mb-4">
-              {reel.title}
-            </Typography>
-            {reel.description && (
-              <p className="text-xl mb-4">{reel.description}</p>
-            )}
-            <div className="grid grid-cols-12 gap-8 mb-8">
-              <div className="col-span-12">
-                {reel.file &&
-                  reel.file.map((fileId, j) => {
-                    const fileItem = reelsFiles.find(
-                      file => file.id === fileId
-                    );
-
-                    if (!fileItem) return null;
-
-                    const fileUrl = `${assetUrl}/${fileItem.directus_files_id}.mp3`;
-
-                    return (
-                      <audio controls className="w-full" key={j}>
-                        <source src={fileUrl} type="audio/mpeg" />
-                        Your browser does not support the audio element.
-                      </audio>
-                    );
-                  })}
-              </div>
-            </div>
-          </Fragment>
-        ))}
     </Modal>
   );
 }

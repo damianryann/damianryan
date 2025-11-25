@@ -14,6 +14,7 @@ import {
 } from '@/libs/directus';
 import AboutModal from '@/components/AboutModal/AboutModal';
 import ReelsModal from '@/components/ReelsModal/ReelsModal';
+import ResumeModal from '@/components/ResumeModal/ResumeModal';
 
 export async function getServerSideProps() {
   try {
@@ -89,6 +90,8 @@ export default function Home({
       setActiveModal('reels');
     } else if (query.modal === 'about') {
       setActiveModal('about');
+    } else if (query.modal === 'resume') {
+      setActiveModal('resume');
     } else if (query.modal === 'contact') {
       setActiveModal('contact');
     } else {
@@ -127,6 +130,11 @@ export default function Home({
                 handleModalToggle={handleModalToggle}
               />
             )}
+
+            <ResumeModal
+              activeModal={activeModal}
+              handleModalToggle={handleModalToggle}
+            />
           </section>
         </main>
         <Footer
