@@ -31,7 +31,7 @@ export default function ResumeModal(props: ResumeModalProps) {
               <p className="text-lg opacity-80">Officer Joe Scroteman</p>
             </div>
             <p className="text-md mt-2 md:mt-0 opacity-70">
-              Hook 'n Crook Productions –{' '}
+              Hook &apos;n Crook Productions –{' '}
               <span className="italic">Pre-production</span>
             </p>
           </div>
