@@ -16,7 +16,7 @@ export default function ResumeModal(props: ResumeModalProps) {
       activeModal={activeModal}>
       <div className="title-line mb-6 text-center">
         <Typography variant="h2" className="text-4xl font-bold">
-          Resume
+          resume
         </Typography>
       </div>
 
