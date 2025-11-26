@@ -21,7 +21,7 @@ export default function ResumeModal(props: ResumeModalProps) {
       </div>
 
       <section className="space-y-6">
-        <h2 className="text-3xl font-bold border-b pb-2">Animation</h2>
+        <h2 className="text-3xl font-bold border-b pb-2">animation</h2>
 
         <div className="space-y-4">
           {/* One credit row */}
@@ -52,7 +52,7 @@ export default function ResumeModal(props: ResumeModalProps) {
       </section>
 
       <section className="space-y-6 mt-10">
-        <h2 className="text-3xl font-bold border-b pb-2">Audiobooks</h2>
+        <h2 className="text-3xl font-bold border-b pb-2">audiobooks</h2>
 
         <div className="space-y-4">
           {/* One credit row */}
